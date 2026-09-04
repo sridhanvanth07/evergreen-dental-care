@@ -33,3 +33,10 @@
 - [x] Replace the Why Evergreen image and update clinic hours.
 - [x] Add and verify the Our Approach page and link.
 - [ ] Save and deliver the updated website checkpoint.
+
+## useEffect cleanup bug
+
+- [x] Trace the reported hook error in the current frontend.
+- [x] Patch the invalid effect cleanup behavior.
+- [x] Run checks and verify the homepage.
+- [ ] Save and report the bug fix.
