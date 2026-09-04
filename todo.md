@@ -14,6 +14,14 @@
 
 ## Existing repository sync
 
-- [ ] Inspect the existing GitHub remote and local revision.
-- [ ] Commit and push the latest verified-data website revision.
-- [ ] Verify synchronization and report completion.
+- [x] Inspect the existing GitHub remote and local revision.
+- [x] Commit and push the latest verified-data website revision.
+- [x] Verify synchronization and report completion.
+
+## Service carousel and detail pages
+
+- [x] Define the verified service catalog and detail-page content structure.
+- [x] Prepare service imagery for the carousel.
+- [x] Implement the auto-advancing carousel and dedicated service routes.
+- [x] Verify carousel controls, service links, responsive layout, and detail-page content.
+- [ ] Save and deliver the updated website checkpoint.

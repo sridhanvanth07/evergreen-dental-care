@@ -1,4 +1,4 @@
-import { FormEvent, useState } from "react";
+import { FormEvent, useEffect, useState } from "react";
 import {
   ArrowUpRight,
   Check,
@@ -13,17 +13,13 @@ import {
   Stethoscope,
   X,
 } from "lucide-react";
+import { Link } from "wouter";
+import { dentalServices } from "@/lib/services";
 
 const heroImage = "/manus-storage/evergreen-hero-doctor_90dacc5f.jpg";
 const interiorImage = "/manus-storage/evergreen-clinic-interior_cefc74c7.jpg";
 const smileImage = "/manus-storage/evergreen-smile-detail_ba44b9f5.jpg";
 const brandMark = "/manus-storage/evergreen-mark_62f72f5f.png";
-
-const services = [
-  { number: "01", title: "Root canal care", copy: "Care for tooth pain and infection, with a clear explanation of each step before treatment begins.", color: "mint" },
-  { number: "02", title: "Bleeding gums", copy: "Support for gum health, from early assessment through practical guidance for everyday care.", color: "sand" },
-  { number: "03", title: "Laser dentistry", copy: "Modern laser-assisted options considered when they can make treatment more precise and comfortable.", color: "blue" },
-];
 
 const doctors = [
   { name: "Dr. Bobby Karthiga", role: "Dental care practitioner", bio: "A calm, attentive approach to helping patients understand their options and choose a comfortable next step.", image: heroImage },
@@ -36,6 +32,12 @@ function scrollToId(id: string) {
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [activeService, setActiveService] = useState(0);
+
+  useEffect(() => {
+    const timer = window.setInterval(() => setActiveService((current) => (current + 1) % dentalServices.length), 4200);
+    return () => window.clearInterval(timer);
+  }, []);
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -95,7 +97,7 @@ export default function Home() {
 
         <section className="why-section section-soft"><div className="page-width why-grid"><div className="why-image"><img src={interiorImage} alt="Evergreen Dental Care interior" /><div className="vertical-label">A CALMER KIND OF CLINIC</div></div><div className="why-copy"><p className="eyebrow"><span /> WHY EVERGREEN</p><h2>Good dentistry is<br /><em>more than a chair.</em></h2><p className="lead">It is a feeling of being listened to. A plan you understand. A team that stays with you, from the first question to the last check-in.</p><div className="benefit-list"><div><div className="benefit-icon"><Stethoscope size={19} /></div><div><h3>Experienced clinicians</h3><p>Deep expertise, explained in language that makes sense.</p></div></div><div><div className="benefit-icon"><Sparkles size={19} /></div><div><h3>Modern, considered care</h3><p>Thoughtful technology used where it genuinely helps.</p></div></div><div><div className="benefit-icon"><ShieldCheck size={19} /></div><div><h3>Clear from day one</h3><p>Transparent options and straightforward treatment plans.</p></div></div></div></div></div></section>
 
-        <section className="services section page-width" id="services"><div className="section-heading"><div><p className="eyebrow"><span /> WHAT WE DO</p><h2>Care for every<br /><em>chapter of life.</em></h2></div><p className="heading-aside">Whether it has been six months or six years since your last visit, you are welcome here. Start wherever you are.</p></div><div className="service-list">{services.map((service) => <article className={`service-card ${service.color}`} key={service.number}><div className="service-top"><span>{service.number}</span><ArrowUpRight size={21} /></div><h3>{service.title}</h3><p>{service.copy}</p><button onClick={() => handleNav("contact")}>Learn more <span>+</span></button></article>)}</div></section>
+        <section className="services section page-width" id="services"><div className="section-heading"><div><p className="eyebrow"><span /> WHAT WE DO</p><h2>Care for every<br /><em>chapter of life.</em></h2></div><p className="heading-aside">Explore the care areas listed for Ever Green Dental Care. Select a service to understand the usual causes, signs, timing, and treatment considerations.</p></div><div className="service-carousel"><div className="service-carousel-viewport"><div className="service-carousel-track" style={{ transform: `translateX(-${activeService * (100 / dentalServices.length)}%)` }}>{dentalServices.map((service) => <Link href={`/services/${service.slug}`} className={`service-card ${service.color}`} key={service.slug}><div className="service-image"><img src={service.image} alt="" /><span className="service-image-arrow"><ArrowUpRight size={19} /></span></div><div className="service-top"><span>{service.number}</span><span className="service-label">{service.shortTitle}</span></div><h3>{service.title}</h3><p>{service.cardCopy}</p><span className="service-learn">View service guide <ArrowUpRight size={15} /></span></Link>)}</div></div><div className="service-carousel-controls"><div className="service-dots" role="tablist" aria-label="Choose a service">{dentalServices.map((service, index) => <button className={index === activeService ? "is-active" : ""} key={service.slug} onClick={() => setActiveService(index)} aria-label={`Show ${service.title}`} />)}</div><div className="service-arrows"><button onClick={() => setActiveService((activeService - 1 + dentalServices.length) % dentalServices.length)} aria-label="Previous service"><ArrowUpRight size={18} className="rotate-left" /></button><button onClick={() => setActiveService((activeService + 1) % dentalServices.length)} aria-label="Next service"><ArrowUpRight size={18} /></button></div></div></div></section>
 
         <section className="team section page-width" id="team"><div className="section-heading team-heading"><div><p className="eyebrow"><span /> THE PEOPLE BEHIND THE SMILES</p><h2>Meet your<br /><em>care team.</em></h2></div><p className="heading-aside">A small, experienced team that believes great dentistry begins with a good conversation.</p></div><div className="doctor-grid">{doctors.map((doctor, index) => <article className="doctor-card" key={doctor.name}><div className="doctor-image"><img src={doctor.image} alt={doctor.name} /><span>0{index + 1}</span></div><div className="doctor-meta"><div><h3>{doctor.name}</h3><p className="doctor-role">{doctor.role}</p></div><ArrowUpRight size={18} /></div><p className="doctor-bio">{doctor.bio}</p></article>)}</div></section>
 
