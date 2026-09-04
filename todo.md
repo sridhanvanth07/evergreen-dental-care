@@ -40,3 +40,10 @@
 - [x] Patch the invalid effect cleanup behavior.
 - [x] Run checks and verify the homepage.
 - [ ] Save and report the bug fix.
+
+## Mobile-first responsive revision
+
+- [x] Audit the homepage, service detail, and approach layouts on mobile and desktop.
+- [x] Refine mobile-first responsive behavior while preserving desktop balance.
+- [x] Verify key flows at both breakpoints.
+- [ ] Commit and push the responsive revision to the existing GitHub repository.
