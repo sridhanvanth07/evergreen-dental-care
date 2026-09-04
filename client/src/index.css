@@ -107,3 +107,22 @@ body { overflow-x: hidden; }
   .service-detail-header .header-appointment { max-width: 178px; text-align: center; }
   .approach-hero .page-width, .service-detail-hero .page-width { width: calc(100% - 34px); }
 }
+
+/* Mobile navigation correction — carousel controls stay visible at every supported width, while narrow headers and grid children are allowed to shrink safely. */
+.service-carousel-track > .service-card, .service-detail-hero-inner > *, .service-detail-body > *, .approach-intro > *, .detail-cta-inner > * { min-width: 0; }
+.service-arrows { flex-shrink: 0; }
+@media (max-width: 560px) {
+  .service-carousel-controls { gap: 12px; }
+  .service-dots { flex: 1; justify-content: center; min-width: 0; }
+  .service-arrows { display: flex; gap: 7px; }
+  .service-arrows button { width: 35px; height: 35px; }
+}
+@media (max-width: 360px) {
+  .service-detail-header { padding-inline: 12px; }
+  .service-detail-header .brand-copy strong { font-size: 11px; letter-spacing: .1em; }
+  .service-detail-header .brand-copy small { font-size: 7px; }
+  .service-detail-header .brand-mark { width: 29px; }
+  .service-detail-header .header-appointment { max-width: 145px; padding: 10px 9px; font-size: 8px; letter-spacing: .08em; }
+  .service-carousel-track .service-card { margin-inline: 3px; }
+  .service-arrows button { width: 32px; height: 32px; }
+}

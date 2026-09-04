@@ -46,4 +46,12 @@
 - [x] Audit the homepage, service detail, and approach layouts on mobile and desktop.
 - [x] Refine mobile-first responsive behavior while preserving desktop balance.
 - [x] Verify key flows at both breakpoints.
-- [ ] Commit and push the responsive revision to the existing GitHub repository.
+- [x] Commit and push the responsive revision to the existing GitHub repository.
+
+## Mobile fixes and service arrows
+
+- [x] Audit remaining mobile layout issues on the homepage and service pages.
+- [x] Fix mobile overflow, spacing, and touch-target issues.
+- [x] Add visible previous/next arrows to the services carousel.
+- [x] Verify mobile and desktop flows.
+- [ ] Save and push the current-repo revision.
