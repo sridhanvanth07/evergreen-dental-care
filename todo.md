@@ -25,3 +25,11 @@
 - [x] Implement the auto-advancing carousel and dedicated service routes.
 - [x] Verify carousel controls, service links, responsive layout, and detail-page content.
 - [ ] Save and deliver the updated website checkpoint.
+
+## Chair image, hours, and care approach
+
+- [x] Review the reference inspiration and provided clinic chair image.
+- [x] Define the professional patient-friendly care approach content.
+- [x] Replace the Why Evergreen image and update clinic hours.
+- [x] Add and verify the Our Approach page and link.
+- [ ] Save and deliver the updated website checkpoint.

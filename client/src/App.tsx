@@ -7,12 +7,14 @@ import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
 import NotFound from "./pages/NotFound";
 import ServiceDetail from "./pages/ServiceDetail";
+import OurApproach from "./pages/OurApproach";
 
 function Router() {
   return (
     <Switch>
       <Route path="/" component={Home} />
       <Route path="/services/:slug" component={ServiceDetail} />
+      <Route path="/our-approach" component={OurApproach} />
       <Route path="/404" component={NotFound} />
       <Route component={NotFound} />
     </Switch>
