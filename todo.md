@@ -2,5 +2,12 @@
 
 - [x] Inspect GitHub authentication and any existing repository metadata.
 - [x] Prepare the local repository with a clean initial commit and safe ignore rules.
-- [ ] Create the GitHub repository and push the project code.
-- [ ] Report the repository URL and push status.
+- [x] Create the GitHub repository and push the project code.
+- [x] Report the repository URL and push status.
+
+## Clinic data revision
+
+- [x] Review the provided Justdial listing and record verified clinic details.
+- [x] Map verified details to the existing homepage content.
+- [x] Replace pseudo data and verify the revised website.
+- [ ] Save a new checkpoint for the updated clinic data.

@@ -4,11 +4,9 @@ import {
   Check,
   ChevronDown,
   Clock3,
-  Instagram,
-  Mail,
   MapPin,
+  ExternalLink,
   Menu,
-  Phone,
   Play,
   ShieldCheck,
   Sparkles,
@@ -22,14 +20,13 @@ const smileImage = "/manus-storage/evergreen-smile-detail_ba44b9f5.jpg";
 const brandMark = "/manus-storage/evergreen-mark_62f72f5f.png";
 
 const services = [
-  { number: "01", title: "Preventive care", copy: "Thoughtful checkups and gentle hygiene plans that keep small concerns from becoming big ones.", color: "mint" },
-  { number: "02", title: "Smile design", copy: "Subtle, natural-looking cosmetic treatments shaped around your features and your everyday life.", color: "sand" },
-  { number: "03", title: "Restorative dentistry", copy: "Modern fillings, crowns, and implants that help you return to eating, speaking, and smiling with ease.", color: "blue" },
+  { number: "01", title: "Root canal care", copy: "Care for tooth pain and infection, with a clear explanation of each step before treatment begins.", color: "mint" },
+  { number: "02", title: "Bleeding gums", copy: "Support for gum health, from early assessment through practical guidance for everyday care.", color: "sand" },
+  { number: "03", title: "Laser dentistry", copy: "Modern laser-assisted options considered when they can make treatment more precise and comfortable.", color: "blue" },
 ];
 
 const doctors = [
-  { name: "Dr. Bobby Karthiga", role: "Founder & Lead Dentist", bio: "Known for a calm chairside manner and a meticulous approach to restorative care.", image: heroImage },
-  { name: "Dr. Mira Raman", role: "Aesthetic Dentist", bio: "Combines modern smile design with an eye for results that still feel entirely like you.", image: smileImage },
+  { name: "Dr. Bobby Karthiga", role: "Dental care practitioner", bio: "A calm, attentive approach to helping patients understand their options and choose a comfortable next step.", image: heroImage },
 ];
 
 function scrollToId(id: string) {
@@ -55,7 +52,7 @@ export default function Home() {
       <header className="site-header">
         <a className="brand" href="#top" aria-label="Evergreen Dental Care home">
           <img src={brandMark} alt="" className="brand-mark" />
-          <span className="brand-copy"><strong>EVERGREEN</strong><small>DENTAL CARE</small></span>
+          <span className="brand-copy"><strong>EVER GREEN</strong><small>DENTAL CARE</small></span>
         </a>
         <nav className={menuOpen ? "main-nav is-open" : "main-nav"} aria-label="Primary navigation">
           <button onClick={() => handleNav("top")}>Home</button>
@@ -82,17 +79,17 @@ export default function Home() {
             </div>
             <div className="hero-visual reveal-delay">
               <div className="hero-image-frame"><img src={heroImage} alt="Dentist in a bright modern clinic" /><div className="image-caption"><span className="caption-dot" /> Meet your care team <ArrowUpRight size={15} /></div></div>
-              <div className="hero-stamp"><span>EST.</span><strong>2026</strong><small>EVERGREEN<br />DENTAL CARE</small></div>
+              <div className="hero-stamp"><span>BASED IN</span><strong>ERODE</strong><small>EVER GREEN<br />DENTAL CARE</small></div>
             </div>
           </div>
           <div className="stats-rail page-width">
-            <div className="stat"><strong>12k<span>+</span></strong><p>smiles cared for<br />with intention</p></div><div className="stat"><strong>18<span>yrs</span></strong><p>of combined<br />clinical experience</p></div><div className="stat"><strong>4.9<span>/5</span></strong><p>patient experience<br />score</p></div><div className="stat stat-cta"><button onClick={() => handleNav("services")}>Explore our care <ArrowUpRight size={18} /></button></div>
+            <div className="stat"><strong>11<span>yrs</span></strong><p>in healthcare<br />as listed</p></div><div className="stat"><strong>4.8<span>/5</span></strong><p>Justdial listing<br />rating</p></div><div className="stat"><strong>4<span>+</span></strong><p>listed treatment<br />areas</p></div><div className="stat stat-cta"><button onClick={() => handleNav("services")}>Explore our care <ArrowUpRight size={18} /></button></div>
           </div>
         </section>
 
         <section className="intro section page-width" id="about">
           <div className="intro-kicker"><span className="section-number">01</span><span className="rule" /><p>THE EVERGREEN DIFFERENCE</p></div>
-          <div className="intro-grid"><div><h2>Clinical precision.<br /><em>Human warmth.</em></h2></div><div className="intro-copy"><p className="lead">Evergreen Dental Care is a modern dental studio built around one simple idea: the best care is care that makes room for you.</p><p>From your first hello to your final follow-up, we keep the experience clear, unhurried, and genuinely personal. Our team combines current clinical thinking with the kind of listening that helps you feel confident in every decision.</p><button className="text-button dark-text" onClick={() => handleNav("team")}>Meet the people behind the care <ArrowUpRight size={16} /></button></div></div>
+          <div className="intro-grid"><div><h2>Clinical precision.<br /><em>Human warmth.</em></h2></div><div className="intro-copy"><p className="lead">Ever Green Dental Care is a neighborhood dental clinic in Chidambaram Colony, Erode, built around one simple idea: the best care is care that makes room for you.</p><p>From your first hello to your final follow-up, we keep the experience clear, unhurried, and genuinely personal. Our team combines current clinical thinking with the kind of listening that helps you feel confident in every decision.</p><button className="text-button dark-text" onClick={() => handleNav("team")}>Meet the people behind the care <ArrowUpRight size={16} /></button></div></div>
           <div className="intro-foot"><span>GOOD CARE IS<br /><strong>SHARED CARE.</strong></span><div className="line-art"><span /><span /><span /></div><span className="foot-note">Built for calmer<br />dental visits.</span></div>
         </section>
 
@@ -104,10 +101,10 @@ export default function Home() {
 
         <section className="pricing-band"><div className="page-width pricing-inner"><div><p className="eyebrow light"><span /> SIMPLE, ALWAYS</p><h2>Know what to expect.<br /><em>Before you begin.</em></h2></div><div className="pricing-copy"><p>We believe financial clarity is part of clinical care. Every recommendation comes with a plain-language explanation and a clear estimate.</p><button className="button button-outline" onClick={() => handleNav("contact")}>View our approach <ArrowUpRight size={16} /></button></div></div></section>
 
-        <section className="contact section page-width" id="contact"><div className="contact-intro"><p className="eyebrow"><span /> LET'S TALK</p><h2>Bring your questions.<br /><em>We'll bring a clear plan.</em></h2><p>Tell us a little about what you need and our team will be in touch within one working day.</p><div className="contact-details"><a href="tel:+918012345678"><Phone size={17} /> +91 80 1234 5678</a><a href="mailto:hello@evergreendental.care"><Mail size={17} /> hello@evergreendental.care</a><span><MapPin size={17} /> 14 Palm Grove, Bengaluru</span></div></div><div className="form-card">{submitted ? <div className="form-success"><div className="success-icon"><Check /></div><h3>We have your note.</h3><p>Thank you for reaching out. A member of our team will call you shortly to find a time that works.</p><button className="text-button dark-text" onClick={() => setSubmitted(false)}>Send another note <ArrowUpRight size={16} /></button></div> : <form onSubmit={handleSubmit}><div className="form-top"><p>BOOK A FIRST VISIT</p><span>01 / 03</span></div><label>My name is<input required type="text" placeholder="Your full name" /></label><label>I would like help with<select defaultValue=""><option value="" disabled>Select a service</option><option>Preventive care</option><option>Smile design</option><option>Restorative dentistry</option></select></label><label>You can reach me at<input required type="tel" placeholder="Phone number" /></label><button className="button button-dark" type="submit">Send enquiry <ArrowUpRight size={16} /></button></form>}</div></section>
+        <section className="contact section page-width" id="contact"><div className="contact-intro"><p className="eyebrow"><span /> LET'S TALK</p><h2>Bring your questions.<br /><em>We'll bring a clear plan.</em></h2><p>Tell us a little about what you need and use the listing link below for the clinic's current contact options.</p><div className="contact-details"><span><MapPin size={17} /> 51 and 51/1, Near Kalaimagal Kalvi Nilayam Opp, Kalaimagal Kalvi Nilayam Road, Chidambaram Colony, Erode–638001, Tamil Nadu</span><a href="https://www.justdial.com/Erode/Ever-Green-Dental-Care-Near-Kalaimagal-Kalvi-Nilayam-Opp-Chidambaram-Colony/9999PX424-X424-150928104223-I5F3_BZDET" target="_blank" rel="noreferrer"><ExternalLink size={17} /> Enquire or view contact options on Justdial</a><span><Clock3 size={17} /> Hours are not listed online — please confirm when enquiring</span></div></div><div className="form-card">{submitted ? <div className="form-success"><div className="success-icon"><Check /></div><h3>We have your note.</h3><p>Thank you for reaching out. Please use the Justdial listing for the clinic's current phone and enquiry options.</p><button className="text-button dark-text" onClick={() => setSubmitted(false)}>Send another note <ArrowUpRight size={16} /></button></div> : <form onSubmit={handleSubmit}><div className="form-top"><p>BOOK A FIRST VISIT</p><span>01 / 03</span></div><label>My name is<input required type="text" placeholder="Your full name" /></label><label>I would like help with<select defaultValue=""><option value="" disabled>Select a service</option><option>Root canal care</option><option>Bleeding gums</option><option>Laser dentistry</option><option>Fixed prosthodontics</option></select></label><label>You can reach me at<input required type="tel" placeholder="Phone number" /></label><button className="button button-dark" type="submit">Send enquiry <ArrowUpRight size={16} /></button></form>}</div></section>
       </main>
 
-      <footer className="footer"><div className="page-width footer-top"><a className="brand footer-brand" href="#top"><img src={brandMark} alt="" className="brand-mark" /><span className="brand-copy"><strong>EVERGREEN</strong><small>DENTAL CARE</small></span></a><p>A calmer kind of dental care,<br />for every kind of smile.</p><div className="footer-links"><a href="#services">Services</a><a href="#team">Our team</a><a href="#contact">Contact</a></div><div className="socials"><a href="#top" aria-label="Instagram"><Instagram size={17} /></a><a href="mailto:hello@evergreendental.care" aria-label="Email"><Mail size={17} /></a></div></div><div className="page-width footer-bottom"><span>© 2026 Evergreen Dental Care</span><span>Made for better visits.</span><span><Clock3 size={14} /> Mon–Sat, 9am–7pm</span></div></footer>
+      <footer className="footer"><div className="page-width footer-top"><a className="brand footer-brand" href="#top"><img src={brandMark} alt="" className="brand-mark" /><span className="brand-copy"><strong>EVER GREEN</strong><small>DENTAL CARE</small></span></a><p>A calmer kind of dental care,<br />in Chidambaram Colony, Erode.</p><div className="footer-links"><a href="#services">Services</a><a href="#team">Our team</a><a href="#contact">Contact</a></div><div className="socials"><a href="https://www.justdial.com/Erode/Ever-Green-Dental-Care-Near-Kalaimagal-Kalvi-Nilayam-Opp-Chidambaram-Colony/9999PX424-X424-150928104223-I5F3_BZDET" target="_blank" rel="noreferrer" aria-label="Justdial listing"><ExternalLink size={17} /></a><a href="#contact" aria-label="Contact"><MapPin size={17} /></a></div></div><div className="page-width footer-bottom"><span>© Ever Green Dental Care</span><span>Made for better visits.</span><span><Clock3 size={14} /> Hours: confirm on enquiry</span></div></footer>
     </div>
   );
 }
